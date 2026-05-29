@@ -584,16 +584,62 @@
     .content-grid {
         display: flex;
         flex-direction: column;
-        gap: 22px;
+        gap: 24px;
     }
-    .navbar { padding: 14px; }
-    .detail-container { padding: 80px 20px 30px; }
-    #detail-name { font-size: 28px; }
-    .category-badge { margin-top: 6px; }
-    .header-actions { flex-wrap: wrap; }
+    
+    .detail-container { 
+        padding: 90px 5% 30px; 
+    }
+    
+    #detail-name { 
+        font-size: 28px; 
+    }
+    
     .left-column,
     .right-column {
+        flex: 1 1 100%;
         min-width: 100%;
+        max-width: 100%;
         gap: 18px;
     }
+}
+
+@media (max-width: 576px) {
+    .header-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .header-actions button, 
+    .back-btn-page {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .active-round-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .slot-team {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .podium {
+        gap: 12px;
+    }
+    
+    .podium-item {
+        width: 48%; 
+    }
+    
+    .medal { font-size: 36px; }
+    .team-name { font-size: 14px; }
+    
+    .podium-stand.gold { height: 120px; }
+    .podium-stand.silver { height: 90px; }
 }
