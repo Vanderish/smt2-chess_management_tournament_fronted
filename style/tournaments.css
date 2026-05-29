@@ -331,7 +331,7 @@ html, body {
     align-items: stretch;
     gap: 16px; 
   }
-  
+
   .search-box {
     flex: none; 
     width: 100%;
@@ -344,6 +344,10 @@ html, body {
     padding-bottom: 12px;
     width: 100%;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .stats {
