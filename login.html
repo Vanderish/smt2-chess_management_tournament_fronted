@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="icon" type="image/png" href="./partials/LogoTournament.png">
+
+  <link rel="stylesheet" href="style/global.css">
+  <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="login-box">
+
+      <h1>LOGIN</h1>
+
+      <p>Login ke akun panitia</p>
+
+      <form id="login-form">
+
+        <div class="input-group">
+          <label>Username</label>
+          <input type="text" id="username" placeholder="Masukkan username" required>
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="login-password" placeholder="Masukkan password" required>
+            <span class="toggle-password" id="toggle-password">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="btn-login">Login</button>
+        </div>
+
+      </form>
+
+      <div class="bottom-text">
+        Belum punya akun?
+        <a href="register.html">Register</a>
+      </div>
+
+    </div>
+
+    <button type="button" id="btn-cancel" class="btn-cancel-outside">
+      &larr; Batal & Kembali
+    </button>
+
+  </div>
+
+  <script src="script/snackbar.js"></script>
+  <script type="module" src="script/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Daftar Turnamen Page Styles */
+
+.daftar-container {
+    padding: 100px 60px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.daftar-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.daftar-header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.category-text {
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.daftar-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* REGISTRATION FORM */
+.registration-form {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45) inset;
+}
+
+.registration-form h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary-2);
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14px;
+    transition: 0.2s ease all;
+}
+
+.form-group input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.05);
+    border-color: var(--primary);
+    box-shadow: 0 0 12px rgba(91,140,255,0.15);
+}
+
+.form-group input::placeholder {
+    color: rgba(170,170,170,0.6);
+}
+
+/* SUBMIT BUTTON */
+.btn-submit {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--primary);
+    color: var(--text);
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.12s ease, filter 0.12s ease;
+    box-shadow: 0 6px 18px rgba(91,140,255,0.08) inset;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .daftar-container {
+        padding: 80px 20px 30px;
+    }
+
+    .daftar-header h1 {
+        font-size: 28px;
+    }
+
+    .daftar-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .info-section, .registration-form {
+        padding: 20px;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .btn-submit {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}

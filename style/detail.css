@@ -1,0 +1,599 @@
+/* Base & layout */
+.logo { color: var(--primary-2); }
+
+.detail-container {
+    padding: 100px 4% 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.left-column {
+    flex: 0 0 420px;
+    min-width: 360px;
+}
+
+.right-column {
+    flex: 1 1 600px;
+    min-width: 520px;
+}
+
+.right-column .teams-card {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   HEADER & TOMBOL AKSI
+   ========================================= */
+.header-title-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header-labels {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#detail-name {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.category-badge {
+    background-color: var(--primary);
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+}
+
+.status-badge.waiting {
+    background: rgba(255, 208, 0, 0.14);
+    color: #ffd000;
+    border-color: rgba(255, 208, 0, 0.25);
+}
+
+.status-badge.ongoing {
+    background: rgba(0, 255, 136, 0.12);
+    color: #00ff88;
+    border-color: rgba(0, 255, 136, 0.2);
+}
+
+.status-badge.finished {
+    background: rgba(255, 77, 77, 0.14);
+    color: #ff4d4d;
+    border-color: rgba(255, 77, 77, 0.22);
+}
+
+.back-btn-page {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.05);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-btn-page:hover { 
+    background: rgba(255,255,255,0.1); 
+    transform: translateY(-2px); 
+}
+
+.btn-start-tournament {
+    padding: 10px 20px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-start-tournament:hover { 
+    transform: translateY(-2px); 
+    filter: brightness(1.1); 
+}
+
+.btn-delete-room {
+    padding: 10px 16px;
+    background: transparent;
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: none;
+}
+
+.btn-delete-room:hover { 
+    background: rgba(255, 107, 107, 0.1); 
+    border-color: #ff6b6b; 
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   KARTU INFORMASI & FORM TAMBAH PESERTA
+   ========================================= */
+.add-participant-card{
+    display: flex;
+    flex-direction: column;
+}
+.info-card, .teams-card, .add-participant-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45) inset;
+}
+
+.info-card h3, .teams-card h3, .right-column h3, .add-participant-card h3 {
+    color: var(--primary-2);
+    font-size: 18px;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.info-card p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.status-highlight {
+    font-weight: 700;
+}
+
+#form-add-participant {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#input-participant-name {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(0,0,0,0.2);
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#input-participant-name:focus {
+    outline: none;
+    border-color: var(--primary-2);
+}
+
+.btn-add {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary-2);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-add:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   LIST TIM TERDAFTAR
+   ========================================= */
+.teams-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.teams-list li {
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.03));
+    border-left: 4px solid var(--primary-2);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.participant-text {
+    flex: 1;
+}
+
+.btn-delete-participant {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.btn-delete-participant:hover {
+    background: rgba(255, 107, 107, 0.14);
+    transform: translateY(-1px);
+}
+
+.btn-delete-participant:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.no-data {
+    color: var(--muted) !important;
+    font-style: italic;
+    border-left: 4px solid rgba(255,255,255,0.04) !important;
+    padding: 18px 16px;
+    border-radius: 10px;
+}
+
+/* =========================================
+   TAMPILAN BAGAN GRID MENYAMPING
+   ========================================= */
+.bracket-container {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.active-round-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.matchup {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(10,14,20,0.6), rgba(18,23,30,0.6));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.matchup:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}
+
+.slot-team {
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slot-team:hover { 
+    background: rgba(91,140,255,0.03); 
+}
+
+.slot-team:last-child {
+    border-bottom: none;
+}
+
+.bye-player {
+    color: var(--muted) !important;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.02) !important;
+    opacity: 0.6;
+    border-bottom: 1px dashed rgba(255,255,255,0.1) !important;
+}
+
+.winner-slot {
+    border: 1px solid var(--primary-2);
+    color: #93c5fd;
+    background: linear-gradient(180deg, rgba(88,130,255,0.04), rgba(0,0,0,0.02));
+}
+
+.winner-badge {
+    margin-left: 12px;
+    padding: 4px 8px;
+    background: rgba(34, 197, 94, 0.18);
+    color: #22c55e;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.btn-win-match {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-win-match:hover {
+    background: #22c55e;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.btn-win-match:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================================
+   FUNGSI QR CODE & UTILITIES
+   ========================================= */
+.btn-qr {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--primary);
+    color: var(--text);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 0 6px 18px rgba(91,140,255,0.08) inset;
+}
+
+.btn-qr:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 10px 30px rgba(91,140,255,0.08); 
+}
+
+.qr-display {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+}
+
+.qr-display img { width: 140px; height: 140px;}
+.qr-display p { color: #0f172a; margin-top: 8px; font-size: 12px; font-weight: bold; margin-bottom: 0; }
+
+/* =========================================
+   STATUS-BASED VISIBILITY
+   ========================================= */
+.teams-card-hidden {
+    display: none;
+}
+
+/* Default: sembunyikan bracket header */
+#bracket-header {
+    display: none;
+}
+
+/* =========================================
+   LOGIKA VISIBILITAS STATUS "PENDAFTARAN"
+   ========================================= */
+
+/* Sembunyikan bracket saat status pendaftaran */
+.detail-container.status-pendaftaran #bracket-header,
+.detail-container.status-pendaftaran #bracket-container,
+.detail-container.status-pendaftaran #teams-card-registration {
+    display: none !important;
+}
+
+/* Sembunyikan teams-card saat status berjalan */
+.detail-container.status-berjalan .left-column > .teams-card,
+.detail-container.status-berjalan .right-column > .teams-card {
+    display: none !important;
+}
+
+/* =========================================
+   LOGIKA VISIBILITAS STATUS "BERJALAN"
+   ========================================= */
+/* Sembunyikan form tambah peserta saat status berjalan */
+.detail-container.status-berjalan .add-participant-card {
+    display: none !important;
+}
+
+/* Tampilkan bracket header saat status berjalan */
+.detail-container.status-berjalan #bracket-header {
+    display: block;
+}
+
+/* =========================================
+   LOGIKA VISIBILITAS STATUS "SELESAI"
+   ========================================= */
+/* Sembunyikan elemen yang tidak perlu saat turnamen selesai */
+.detail-container.status-selesai .teams-card,
+.detail-container.status-selesai #bracket-header,
+.detail-container.status-selesai #bracket-container,
+.detail-container.status-selesai #teams-card-registration,
+.detail-container.status-selesai #add-participant-card {
+    display: none !important;
+}
+
+/* Tampilkan podium saat turnamen selesai */
+.detail-container.status-selesai #leaderboard-container {
+    display: block;
+}
+
+/* =========================================
+   LEADERBOARD / PODIUM (STATUS SELESAI)
+   ========================================= */
+.leaderboard-container {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.3));
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    display: none;
+}
+
+.leaderboard-title {
+    color: #fbbf24;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.podium-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.medal {
+    font-size: 56px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+}
+
+.team-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.podium-stand {
+    width: 100%;
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px 12px 0 0;
+    box-shadow: inset 0 6px 20px rgba(255,255,255,0.25);
+}
+
+.podium-stand.gold {
+    height: 160px;
+    background: linear-gradient(180deg, #fbbf24, #b45309);
+    border: 1px solid #fde047;
+}
+
+.podium-stand.silver {
+    height: 110px;
+    background: linear-gradient(180deg, #94a3b8, #334155);
+    border: 1px solid #cbd5e1;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   RESPONSIF MOBILE
+   ========================================= */
+@media (max-width: 992px) {
+    .content-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+    .navbar { padding: 14px; }
+    .detail-container { padding: 80px 20px 30px; }
+    #detail-name { font-size: 28px; }
+    .category-badge { margin-top: 6px; }
+    .header-actions { flex-wrap: wrap; }
+    .left-column,
+    .right-column {
+        min-width: 100%;
+        gap: 18px;
+    }
+}

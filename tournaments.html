@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournaments - Orix</title>
+  <link rel="icon" type="image/png" href="./partials/LogoTournament.png">
+
+  <link rel="stylesheet" href="style/global.css">
+  <link rel="stylesheet" href="style/tournaments.css">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar-container"></nav>
+
+  <section class="tournament-section">
+
+    <div class="title-row">
+      <div class="title">
+        <h1>Daftar Tournament</h1>
+      </div>
+      <button id="btn-create">Create Tournament</button>
+    </div>
+
+    <div class="controls-row">
+      <div class="search-box">
+        <input id="search-input" type="search" placeholder="Cari nama atau kategori turnamen..." />
+      </div>
+      <div class="filter-tabs" id="filter-container"></div>
+    </div>
+
+    <div class="tournament-container" id="tournament-list">
+      <p style="color: #aaa;">Memuat data turnamen...</p>
+    </div>
+
+  </section>
+
+
+  <div id="tournamentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Buat Turnamen Baru</h3>
+            <form id="modal-form">
+                <div class="form-group">
+                    <label for="modal-name">Nama Turnamen</label>
+                    <input type="text" id="modal-name" placeholder="Contoh: Piala Bupati Futsal" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-category">Jenis Lomba</label>
+                    <select id="modal-category" required>
+                        <option value="" disabled selected>-- Pilih Jenis Lomba --</option>
+                        <option value="Catur">Catur</option>
+                        <option value="Futsal">Futsal</option>
+                        <option value="Sepak Bola">Sepak Bola</option>
+                        <option value="Badminton">Badminton</option>
+                        <option value="Bola Voli">Bola Voli</option>
+                        <option value="Mobile Legends">Mobile Legends</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit-modal">Simpan Turnamen</button>
+            </form>
+        </div>
+    </div>
+
+  <script src="script/snackbar.js"></script>
+  <script type="module" src="script/tournaments.js"></script>
+  <script src="script/loadNavbar.js"></script>
+
+</body>
+</html>

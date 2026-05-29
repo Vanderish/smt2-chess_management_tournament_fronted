@@ -1,0 +1,152 @@
+/* =========================================
+   CONTAINER & BOX
+   ========================================= */
+.container {
+  height: calc(100vh - 70px); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.register-box {
+  width: 400px;
+  background: #151515;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #222;
+}
+
+.register-box h1 {
+  color: #5b8cff;
+  margin-bottom: 10px;
+}
+
+.register-box p {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   INPUT GROUPS
+   ========================================= */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-group > input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #222;
+  color: white;
+  transition: 0.3s;
+}
+
+.input-group > input:focus {
+  outline: 1px solid #5b8cff;
+}
+
+/* =========================================
+   PASSWORD WRAPPER & ICON
+   ========================================= */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding: 15px;
+  padding-right: 45px;
+  border: none;
+  border-radius: 10px;
+  background: #222;
+  color: white;
+  transition: 0.3s;
+}
+
+.password-wrapper input:focus {
+  outline: 1px solid #5b8cff;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.toggle-password:hover svg {
+  stroke: #5b8cff;
+}
+
+/* =========================================
+   TOMBOL REGISTER
+   ========================================= */
+.btn-register {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #5b8cff;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-register:hover {
+  background: #4a7df0;
+}
+
+/* =========================================
+   TOMBOL CANCEL (DI LUAR KOTAK)
+   ========================================= */
+.btn-cancel-outside {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #444; 
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cancel-outside:hover {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+  background: #ff4d4d11;
+}
+
+/* =========================================
+   BOTTOM TEXT
+   ========================================= */
+.bottom-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bottom-text a {
+  color: #5b8cff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.bottom-text a:hover {
+  text-decoration: underline;
+}

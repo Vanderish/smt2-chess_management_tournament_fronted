@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Peserta - TournamentMS</title>
+    <link rel="icon" type="image/png" href="./partials/LogoTournament.png">
+    
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/daftar-turnamen.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar-container"></nav>
+
+    <div class="daftar-container">
+        
+        <div class="daftar-header">
+            <h1 id="tournament-name">Memuat Nama Tournament...</h1>
+            <p id="tournament-category" class="category-text">-</p>
+        </div>
+
+        <div class="daftar-content">
+
+            <form id="registration-form" class="registration-form">
+                <h2>Daftarkan Tim Anda</h2>
+                
+                <div class="form-group">
+                    <label for="team-name">Nama Tim *</label>
+                    <input type="text" id="team-name" name="team_name" placeholder="Masukkan nama tim" required>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submit-btn">Daftar Tim</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="script/snackbar.js"></script>
+    <script type="module" src="script/daftar-turnamen.js"></script>
+    <script src="script/loadNavbar.js"></script>
+</body>
+</html>

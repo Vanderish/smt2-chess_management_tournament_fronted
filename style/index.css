@@ -1,0 +1,154 @@
+/* Make index occupy full viewport without scrolling */
+html, body {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+}
+
+/* Hero */
+.hero{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  padding:60px 20px;
+  box-sizing: border-box;
+}
+
+.hero h1{
+  font-size:70px;
+  line-height:1.2;
+  margin-bottom:30px;
+
+  background:linear-gradient(to right,#5b8cff,#9b59ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.description{
+  max-width:700px;
+  color:#aaa;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.hero-buttons{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+/* Stats cards (copied from tournaments.css) */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px 10px 0 10px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.card {
+  background: #151515;
+  border: 1px solid #222;
+  width: 200px;
+  padding: 28px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 34px;
+  color: #5b8cff;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #aaa;
+}
+
+.btn-primary{
+  background:#5b8cff;
+  color:white;
+  border:none;
+  padding:15px 35px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.btn-primary:hover{
+  background:#4a7df0;
+}
+
+.btn-secondary{
+  background:transparent;
+  color:white;
+  border:1px solid #444;
+  padding:15px 35px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.btn-secondary:hover{
+  border-color:#5b8cff;
+}
+
+/* Features */
+.features{
+  padding:100px 50px;
+  text-align:center;
+}
+
+.features h2{
+  font-size:40px;
+  margin-bottom:50px;
+}
+
+.feature-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.feature-card{
+  width:300px;
+  background:#151515;
+  border:1px solid #222;
+  padding:35px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.feature-card:hover{
+  transform:translateY(-10px);
+  border-color:#5b8cff;
+}
+
+.feature-card h3{
+  margin-bottom:20px;
+  color:#5b8cff;
+}
+
+.feature-card p{
+  color:#aaa;
+  line-height:1.7;
+}
+
+/* Responsive (Khusus Hero) */
+@media(max-width:768px){
+  .hero h1{
+    font-size:45px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+}
