@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setupEventListeners();
         renderFilterButtons();
         await loadTournaments();
-        await loadStats();
     }
 
     function parseToken() {
@@ -121,19 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleVisibilityChange() {
         if (document.visibilityState === 'visible') {
             loadTournaments();
-            loadStats();
         }
     }
 
     function handleWindowFocus() {
         loadTournaments();
-        loadStats();
     }
 
     function handleStorageEvent(event) {
         if (event && event.key === 'tournaments_update') {
             loadTournaments();
-            loadStats();
         }
     }
 
