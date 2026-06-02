@@ -3,16 +3,13 @@ import { getTournamentDetails, addParticipant } from './utils/api.js';
 document.addEventListener('DOMContentLoaded', async () => {
     let tournamentId = null;
 
-    // Try query parameter
     const urlParams = new URLSearchParams(window.location.search);
-    tournamentId = urlParams.get('id') || urlParams.get('room_id') || urlParams.get('tournament_id');
+    tournamentId = urlParams.get('id');
 
-    // Try hash/fragment
     if (!tournamentId && window.location.hash) {
         tournamentId = window.location.hash.substring(1);
     }
 
-    // Try to parse from pathname (e.g., /daftar-turnamen/8)
     if (!tournamentId) {
         const pathMatch = window.location.pathname.match(/\/daftar-turnamen\/(\d+)/);
         if (pathMatch) {
@@ -29,7 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // Fetch tournament details
         const tournament = await getTournamentDetails(tournamentId);
 
         if (!tournament) {
@@ -69,14 +65,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                     return;
                 }
 
-                // Call API to add participant
                 const token = localStorage.getItem('tokenTurnamen');
                 const result = await addParticipant(teamData, tournamentId, token);
 
                 if (result) {
                     if (window.showSnackbar) window.showSnackbar('Tim berhasil didaftarkan! Terima kasih.', 'success');
                     
-                    // Reset form
                     registrationForm.reset();
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Daftar Tim';

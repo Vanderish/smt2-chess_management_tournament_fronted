@@ -33,11 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTournament = null;
     let currentStatus = '';
     let teamsList = [];
+    let currentUserId = null;
     const participantNameMap = new Map();
 
     initPage();
 
     async function initPage() {
+        parseToken();
         if (!tournamentId) {
             showErrorAndRedirect('Data turnamen tidak ditemukan!');
             return;
@@ -66,6 +68,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             handlePageError(error);
+        }
+    }
+
+    function parseToken() {
+        if (!token) return;
+        try {
+            const payloadBase64 = token.split('.')[1];
+            const decodedPayload = JSON.parse(atob(payloadBase64));
+            currentUserId = decodedPayload.id;
+        } catch (error) {
+            console.error('Token parsing error:', error);
         }
     }
 
@@ -122,25 +135,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function canDeleteParticipant() {
-        return Boolean(token) && isRegistrationStatus();
+        return Boolean(token) && isRegistrationStatus() && currentUserId === currentTournament.user_id;
     }
 
     function updateAdminControlsVisibility() {
         if (btnStartTournament) {
-            btnStartTournament.classList.toggle('hidden', !(token && isRegistrationStatus()));
+            btnStartTournament.classList.toggle('hidden', !(token && isRegistrationStatus() && currentUserId === currentTournament.user_id));
         }
         if (btnDelete) {
             btnDelete.classList.toggle('hidden', !token);
         }
         if (btnGenerateQr) {
-            btnGenerateQr.classList.toggle('hidden', !token);
+            btnGenerateQr.classList.toggle('hidden', !(token && currentUserId === currentTournament.user_id));
         }
         updateParticipantSectionVisibility();
     }
 
     function updateParticipantSectionVisibility() {
         if (participantSection) {
-            if (token && isRegistrationStatus()) {
+            if (token && isRegistrationStatus() && currentUserId === currentTournament.user_id) {
                 participantSection.classList.remove('hidden');
             } else {
                 participantSection.classList.add('hidden');
@@ -453,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let deleteTimeout;
 
         if (!btnDelete) return;
-        if (token) btnDelete.style.display = 'block';
+        if (token && currentUserId === currentTournament.user_id) btnDelete.style.display = 'block';
 
         btnDelete.addEventListener('click', async () => {
             if (!token) {
